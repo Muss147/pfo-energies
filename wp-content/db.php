@@ -1,0 +1,1 @@
+/Applications/MAMP/htdocs/pfo-energies/wp-content/plugins/query-monitor/wp-content/db.php
