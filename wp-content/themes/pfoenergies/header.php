@@ -50,3 +50,5 @@
                 </div>
             </div>
         </header>
+
+        <main class="min-h-screen">

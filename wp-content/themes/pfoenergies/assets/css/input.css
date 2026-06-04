@@ -3,4 +3,9 @@
 @theme {
     --font-sans: Helvetica, Arial, sans-serif;
     --color-primary: #2a3d76;
+    --text-md: 16px;
+}
+
+body {
+    font-size: 1.125rem;
 }

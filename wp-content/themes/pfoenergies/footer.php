@@ -1,3 +1,5 @@
+    </main>
+
     <footer class="bg-primary text-white py-12 mt-12 w-full">
         <div class="max-w-350 mx-auto grid grid-cols-5">
             <div class="container col-span-1 flex flex-col items-start gap-8">

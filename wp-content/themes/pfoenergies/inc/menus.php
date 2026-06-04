@@ -24,3 +24,18 @@ add_action('widgets_init', function () {
     ]);
 });
 
+add_filter('nav_menu_link_attributes', 'pfoenergies_classes_links_sidebar', 10, 4);
+
+function pfoenergies_classes_links_sidebar(array $atts, $item, $args, $depth) {
+    if ($args->theme_location !== 'header') {
+    
+        if (isset($atts['class'])) {
+            $atts['class'] .= ' text-sm font-light hover:underline';
+        } else {
+            $atts['class'] = 'text-sm font-light hover:underline';
+        }
+    
+    }
+    return $atts;
+}
+

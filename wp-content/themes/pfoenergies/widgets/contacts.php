@@ -30,13 +30,13 @@ $fields = [
             <?php if (!empty($url)) : ?>
                 <a
                     href="<?= esc_url($url) ?>"
-                    class="text-xs font-light hover:underline"
+                    class="text-sm font-light hover:underline"
                 >
                     <?= esc_html($label) ?>
                 </a>
             <?php else : ?>
 
-                <span class="text-xs font-light">
+                <span class="text-sm font-light">
                     <?= esc_html($label) ?>
                 </span>
 
