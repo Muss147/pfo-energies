@@ -8,13 +8,13 @@
         </div>
     </div>
 
-    <div class="max-w-7xl mx-auto py-12">
+    <div class="max-w-7xl mx-auto py-8">
         <div class="inline-block mb-8">
             <h2 class="text-xl text-primary uppercase leading-none tracking-tight font-semibold">À la une</h2>
             <div class="mt-1 h-0.5 w-16 bg-primary"></div>
         </div>
 
-        <card class="w-full">
+        <article class="w-full">
             <div class="pr-0 sm:pr-12">
                 <div class="flex items-center justify-between text-primary">
                     <h3 class="text-md uppercase font-semibold mb-2">FERKÉ SOLAR OFFRE UNE SALLE INFORMATIQUE ET DU MATÉRIEL MÉDICAL À FERKESSÉDOUGOU</h3>
@@ -32,7 +32,47 @@
                 </a>
                 <div class="size-10 border-r border-b border-primary"></div>
             </div>
-        </card>
+        </article>
+    </div>
+
+    <div class="max-w-7xl mx-auto py-8">
+        <div class="inline-block mb-6">
+            <h2 class="text-xl text-primary uppercase leading-none tracking-tight font-semibold">Plus d'articles</h2>
+            <div class="mt-1 h-0.5 w-16 bg-primary"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <article class="w-full text-primary">
+                <img alt="Image de l'actualité" src="wp-content/themes/pfoenergies/assets/img/actualite-1.png" class="w-full h-64 object-cover mt-3 shadow-xl/20">
+                <h3 class="text-sm uppercase leading-none tracking-tight font-semibold mt-6">FERKÉ SOLAR OFFRE UNE SALLE INFORMATIQUE ET DU MATÉRIEL MÉDICAL À FERKESSÉDOUGOU</h3>
+                <div class="flex items-center justify-between text-primary">
+                    <div class="mt-1 h-0.5 w-1/4 bg-primary"></div>
+                    <span class="font-light italic">05/03/2026</span>
+                </div>
+                <p class="mt-3 font-light text-gray-800">Ferkessédougou, 05 mars 2026 (AIP)- La centrale Ferké, initiée par PFO Énergies dans la région du Tchologo, a offert mercredi 04 mars 2026, une salle informatique et du matériel médical...</p>
+                <a href="#" class="bg-primary text-white hover:bg-white hover:text-primary hover:border-primary border-2 text-md px-3 py-2 rounded-sm transition-colors duration-300 ease-in-out">
+                    <span class="inline-block ml-2">Lire plus</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline-block ml-2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                    </svg>
+                </a>
+            </article>
+            <article class="w-full text-primary">
+                <img alt="Image de l'actualité" src="wp-content/themes/pfoenergies/assets/img/actualite-2.png" class="w-full h-64 object-cover mt-3 shadow-xl/20">
+                <h3 class="text-sm uppercase leading-none tracking-tight font-semibold mt-6">REVUE DE PRESSE : POSE DE LA PREMIÈRE PIERRE DE LA CENTRALE FERKÉ SOLAR</h3>
+                <div class="flex items-center justify-between text-primary">
+                    <div class="mt-1 h-0.5 w-1/4 bg-primary"></div>
+                    <span class="font-light italic">05/03/2026</span>
+                </div>
+                <p class="mt-3 font-light text-gray-800">Ferkessédougou, 05 mars 2026 (AIP)- La centrale Ferké, initiée par PFO Énergies dans la région du Tchologo, a offert mercredi 04 mars 2026, une salle informatique et du matériel médical...</p>
+                <a href="#" class="bg-primary text-white hover:bg-white hover:text-primary hover:border-primary border-2 text-md px-3 py-2 rounded-sm transition-colors duration-300 ease-in-out">
+                    <span class="inline-block ml-2">Lire plus</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline-block ml-2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                    </svg>
+                </a>
+            </article>
+        </div>
         <!-- <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <?php
             $args = [
@@ -63,6 +103,5 @@
             ?>
         </div> -->
     </div>
-
 <?php get_footer(); ?>
 
