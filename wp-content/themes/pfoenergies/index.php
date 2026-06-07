@@ -1,16 +1,22 @@
 
 <?php get_header(); ?>
 
-    <div class="w-full h-168.75 bg-contain bg-center bg-no-repeat bg-fixed mt-14" style="background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('wp-content/themes/pfoenergies/assets/img/actualites.png');">
+    <div class="w-full h-168.75 bg-contain bg-center bg-no-repeat bg-fixed mt-14" style="background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('<?php echo get_template_directory_uri(); ?>/assets/img/actualites.png');">
         <div class="max-w-350 mx-auto text-white py-14">
-            <h1 class="text-4xl uppercase font-semibold">Actualités</h1>
+            <h1 class="text-4xl uppercase font-semibold">
+                <?php if(is_category()): ?>
+                    <?php single_cat_title() ?>
+                <?php else: ?>
+                    <?php single_post_title() ?>
+                <?php endif ?>
+            </h1>
             <!-- <p class="mt-4 text-lg">Nous sommes une entreprise spécialisée dans les énergies renouvelables, offrant des solutions innovantes pour un avenir plus durable.</p> -->
         </div>
     </div>
 
     <div class="max-w-7xl mx-auto py-8">
         <div class="inline-block mb-8">
-            <h2 class="text-xl text-primary uppercase leading-none tracking-tight font-semibold">À la une</h2>
+            <h2 class="text-xl text-primary uppercase leading-none tracking-tight font-semibold"><?php _e('Featured', 'pfoenergies') ?></h2>
             <div class="mt-1 h-0.5 w-16 bg-primary"></div>
         </div>
 
@@ -20,7 +26,7 @@
                     <h3 class="text-md uppercase font-semibold mb-2">FERKÉ SOLAR OFFRE UNE SALLE INFORMATIQUE ET DU MATÉRIEL MÉDICAL À FERKESSÉDOUGOU</h3>
                     <span class="font-light italic">05/03/2026</span>
                 </div>
-                <img alt="Image de l'actualité en vedette" src="wp-content/themes/pfoenergies/assets/img/actualite-une.png" class="w-full h-145 object-cover mt-3 shadow-xl/20">
+                <img alt="Image de l'actualité en vedette" src="<?php echo get_template_directory_uri(); ?>/assets/img/actualite-une.png" class="w-full h-145 object-cover mt-3 shadow-xl/20">
                 <p class="mt-7 font-light text-gray-800">Ferkessédougou, 05 mars 2026 (AIP)- La centrale Ferké, initiée par PFO Énergies dans la région du Tchologo, a offert mercredi 04 mars 2026, une salle informatique et du matériel médical...</p>
             </div>
             <div class="flex items-center justify-between mt-5">
@@ -37,7 +43,7 @@
 
     <div class="max-w-7xl mx-auto py-8">
         <div class="inline-block mb-8">
-            <h2 class="text-xl text-primary uppercase leading-none tracking-tight font-semibold">Plus d'articles</h2>
+            <h2 class="text-xl text-primary uppercase leading-none tracking-tight font-semibold"><?php _e('More posts', 'pfoenergies') ?></h2>
             <div class="mt-1 h-0.5 w-16 bg-primary"></div>
         </div>
 

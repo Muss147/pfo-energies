@@ -1,6 +1,6 @@
 
 <?php get_header(); ?>
-
+    
     <div class="max-w-7xl mx-auto py-8 mt-14">
         <?php while (have_posts()) : the_post(); ?>
 
@@ -10,10 +10,10 @@
             <?php endif ?>
 
             <div class="pr-0 sm:pr-12 text-primary mt-7">
-                <h3 class="text-3xl uppercase font-semibold mb-6"><?php the_title(); ?></h3>
+                <h1 class="text-3xl uppercase font-semibold mb-6"><?php the_title(); ?></h1>
                 <span class="font-light italic"><?= the_date('d/m/Y') ?></span>
             
-                <div class="mt-7 font-light text-gray-800">
+                <div class="formatted mt-7 font-light text-gray-800">
                     <?php the_content(); ?>
                 </div>
             </div>

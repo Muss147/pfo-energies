@@ -46,7 +46,7 @@
                         <a href="" class="py-1 px-2">EN</a>
                         <a href="" class="py-1 px-2 bg-primary text-white">FR</a>
                     </div>
-                    <a href="" class="-mb-2"><img alt="PFO Énergies" src="wp-content/themes/pfoenergies/assets/img/icon/icon-search.png" class="h-8"></a>
+                    <a href="" class="-mb-2"><img alt="" src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/icon-search.png" class="h-8"></a>
                 </div>
             </div>
         </header>

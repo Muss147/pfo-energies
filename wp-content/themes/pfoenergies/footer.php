@@ -1,6 +1,6 @@
     </main>
 
-    <footer class="bg-primary text-white py-12 mt-12 w-full">
+    <footer class="bg-primary text-white py-12 mt-20 w-full">
         <div class="max-w-350 mx-auto grid grid-cols-5">
             <div class="container col-span-1 flex flex-col items-start gap-8">
                 <a href="<?= home_url('/'); ?>" class="col-span-3 lg:col-span-1 logo" title="<?= __('Homepage', 'pfoenergies') ?>">
