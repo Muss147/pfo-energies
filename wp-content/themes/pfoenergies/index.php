@@ -10,28 +10,45 @@
                     <?php single_post_title() ?>
                 <?php endif ?>
             </h1>
-            <!-- <p class="mt-4 text-lg">Nous sommes une entreprise spécialisée dans les énergies renouvelables, offrant des solutions innovantes pour un avenir plus durable.</p> -->
         </div>
     </div>
+    
+    <?php
+    $featured = new WP_Query([
+        'post_type'      => 'post',
+        'posts_per_page' => 1,
+        'meta_key'       => 'a_la_une',
+        'meta_value'     => 1,
+    ]);
+    ?>
+    <?php if ($featured->have_posts()) : ?>
 
+    <?php while ($featured->have_posts()) : $featured->the_post(); ?>
     <div class="max-w-7xl mx-auto py-8">
         <div class="inline-block mb-8">
-            <h2 class="text-xl text-primary uppercase leading-none tracking-tight font-semibold"><?php _e('Featured', 'pfoenergies') ?></h2>
+            <h2 class="text-xl text-primary uppercase leading-none tracking-tight font-semibold"><?php __('Featured', 'pfoenergies') ?></h2>
             <div class="mt-1 h-0.5 w-16 bg-primary"></div>
         </div>
 
         <article class="w-full">
             <div class="pr-0 sm:pr-12">
                 <div class="flex items-center justify-between text-primary">
-                    <h3 class="text-md uppercase font-semibold mb-2">FERKÉ SOLAR OFFRE UNE SALLE INFORMATIQUE ET DU MATÉRIEL MÉDICAL À FERKESSÉDOUGOU</h3>
-                    <span class="font-light italic">05/03/2026</span>
+                    <a href="<?php the_permalink(); ?>"><h3 class="text-md uppercase font-semibold mb-2"><?php the_title(); ?></h3></a>
+                    <span class="font-light italic"><?php echo get_the_date('d/m/Y'); ?></span>
                 </div>
-                <img alt="Image de l'actualité en vedette" src="<?php echo get_template_directory_uri(); ?>/assets/img/actualite-une.png" class="w-full h-145 object-cover mt-3 shadow-xl/20">
-                <p class="mt-7 font-light text-gray-800">Ferkessédougou, 05 mars 2026 (AIP)- La centrale Ferké, initiée par PFO Énergies dans la région du Tchologo, a offert mercredi 04 mars 2026, une salle informatique et du matériel médical...</p>
+                <?php if (has_post_thumbnail()) : ?>
+                    <?php the_post_thumbnail('full', [
+                        'class' => 'w-full h-145 object-cover mt-3 shadow-xl'
+
+                    ]); ?>
+                <?php endif; ?>
+                <div class="mt-7 font-light text-gray-800">
+                    <?= wp_trim_words(get_the_excerpt(), 40); ?>
+                </div>
             </div>
             <div class="flex items-center justify-between mt-5">
-                <a href="#" class="bg-primary text-white hover:bg-white hover:text-primary hover:border-primary border-2 text-md px-3 py-1 rounded-sm transition-colors duration-300 ease-in-out">
-                    <span class="inline-block ml-2">Lire plus</span>
+                <a href="<?php the_permalink(); ?>" class="bg-primary text-white hover:bg-white hover:text-primary hover:border-primary border-2 text-md px-3 py-1 rounded-sm transition-colors duration-300 ease-in-out">
+                    <span class="inline-block ml-2"><?= __('Read more', 'pfoenergies') ?></span>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline-block ml-2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
                     </svg>
@@ -40,10 +57,14 @@
             </div>
         </article>
     </div>
+    <?php endwhile; ?>
+    <?php wp_reset_postdata(); ?>
+
+    <?php endif; ?>
 
     <div class="max-w-7xl mx-auto py-8">
         <div class="inline-block mb-8">
-            <h2 class="text-xl text-primary uppercase leading-none tracking-tight font-semibold"><?php _e('More posts', 'pfoenergies') ?></h2>
+            <h2 class="text-xl text-primary uppercase leading-none tracking-tight font-semibold"><?= __('More posts', 'pfoenergies') ?></h2>
             <div class="mt-1 h-0.5 w-16 bg-primary"></div>
         </div>
 
@@ -58,7 +79,7 @@
                 <?php pfoenergies_pagination() ?>
 
             <?php else : ?>
-                <h2><? __('No posts found.', 'pfoenergies'); ?></h2>
+                <h2 class="col-span-3 text-center mt-24"><?php __('No posts found.', 'pfoenergies'); ?></h2>
             <?php endif; ?>
         </div>
     </div>

@@ -47,31 +47,31 @@
             </div>
             <?php if (get_field('concessionnaire')): ?>
             <div class="text-center flex-1 t">
-                <h4 class="text-primary text-sm uppercase font-semibold"><?php _e('Dealer', 'pfoenergies') ?></h4>
+                <h4 class="text-primary text-sm uppercase font-semibold"><?= __('Dealer', 'pfoenergies') ?></h4>
                 <span class="text-sm font-extralight text-gray-600"><?php the_field('concessionnaire') ?></span>
             </div>
             <?php endif; ?>
             <?php if (get_field('maitre_douvrage')): ?>
             <div class="text-center flex-1 t">
-                <h4 class="text-primary text-sm uppercase font-semibold"><?php _e('Master of Works', 'pfoenergies') ?></h4>
+                <h4 class="text-primary text-sm uppercase font-semibold"><?= __('Master of Works', 'pfoenergies') ?></h4>
                 <span class="text-sm font-extralight text-gray-600"><?php the_field('maitre_douvrage') ?></span>
             </div>
             <?php endif; ?>
             <?php if (get_field('entreprise_associee')): ?>
             <div class="text-center flex-1 t">
-                <h4 class="text-primary text-sm uppercase font-semibold"><?php _e('Associated Company', 'pfoenergies') ?></h4>
+                <h4 class="text-primary text-sm uppercase font-semibold"><?= __('Associated Company', 'pfoenergies') ?></h4>
                 <span class="text-sm font-extralight text-gray-600"><?php the_field('entreprise_associee') ?></span>
             </div>
             <?php endif; ?>
             <?php if (get_field('duree_des_travaux')): ?>
             <div class="text-center flex-1 t">
-                <h4 class="text-primary text-sm uppercase font-semibold"><?php _e('Duration of Works', 'pfoenergies') ?></h4>
-                <span class="text-sm font-extralight text-gray-600"><?php the_field('duree_des_travaux') ?> <?php _e('months', 'pfoenergies') ?></span>
+                <h4 class="text-primary text-sm uppercase font-semibold"><?= __('Duration of Works', 'pfoenergies') ?></h4>
+                <span class="text-sm font-extralight text-gray-600"><?php the_field('duree_des_travaux') ?> <?= __('months', 'pfoenergies') ?></span>
             </div>
             <?php endif; ?>
             <?php if (get_field('livraison')): ?>
             <div class="text-center flex-1 t">
-                <h4 class="text-primary text-sm uppercase font-semibold"><?php _e('Delivery', 'pfoenergies') ?></h4>
+                <h4 class="text-primary text-sm uppercase font-semibold"><?= __('Delivery', 'pfoenergies') ?></h4>
                 <span class="text-sm font-extralight text-gray-600"><?php the_field('livraison') ?></span>
             </div>
             <?php endif; ?>
@@ -101,24 +101,24 @@
             <div class="col-span-2">
                 <div class="absolute inset-y-0 right-0 h-full max-w-5/12 w-full flex items-center">
                     <div class="bg-primary text-white w-full py-5 pl-10 pr-24">
-                        <h4 class="uppercase text-center p-2 border border-white"><?php _e('Key Figures', 'pfoenergies') ?></h4>
+                        <h4 class="uppercase text-center p-2 border border-white"><?= __('Key Figures', 'pfoenergies') ?></h4>
                         <ul class="font-extralight mt-8">
                             <?php if (get_field('panneaux_solaires')): ?>
                             <li class="flex flex-col mb-3">
                                 <span class="text-3xl font-bold"><?php the_field('panneaux_solaires') ?></span>
-                                <span class="text-md font-light uppercase"><?php _e('Solar panels', 'pfoenergies') ?></span>
+                                <span class="text-md font-light uppercase"><?= __('Solar panels', 'pfoenergies') ?></span>
                             </li>
                             <?php endif; ?>
                             <?php if (get_field('hectares')): ?>
                             <li class="flex flex-col mb-3">
                                 <span class="text-3xl font-bold"><?php the_field('hectares') ?></span>
-                                <span class="text-md font-light uppercase"><?php _e('Hectares', 'pfoenergies') ?></span>
+                                <span class="text-md font-light uppercase"><?= __('Hectares', 'pfoenergies') ?></span>
                             </li>
                             <?php endif; ?>
                             <?php if (get_field('foyes_electrifies')): ?>
                             <li class="flex flex-col">
                                 <span class="text-3xl font-bold"><?php the_field('foyes_electrifies') ?></span>
-                                <span class="text-md font-light uppercase"><?php _e('Electrified houses', 'pfoenergies') ?></span>
+                                <span class="text-md font-light uppercase"><?= __('Electrified houses', 'pfoenergies') ?></span>
                             </li>
                             <?php endif; ?>
                         </ul>
