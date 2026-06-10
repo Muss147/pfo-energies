@@ -4,8 +4,9 @@ require_once('inc/assets.php');
 require_once('inc/apparence.php');
 require_once('inc/menus.php');
 require_once('inc/images.php');
+require_once('inc/style.php');
 require_once('inc/query/posts.php');
-require_once('inc/query/projet.php');
+require_once('inc/query/project.php');
 
 function pfoenergies_icon(string $name): string {
     $spriteUrl = get_template_directory_uri() . '/assets/sprite.14d9fd56.svg';
@@ -13,6 +14,7 @@ function pfoenergies_icon(string $name): string {
 <svg class="icon"><use xlink:href="{$spriteUrl}#{$name}"></use></svg>
 HTML;
 }
+
 function pfoenergies_pagination(): void
 {
     $links = paginate_links([
@@ -43,3 +45,29 @@ function pfoenergies_pagination(): void
     </div>
     <?php
 }
+
+// Garantir qu’un seul article est "à la une" au moment de l’enregistrement ACF
+add_action('acf/save_post', function ($post_id) {
+
+    if (get_post_type($post_id) !== 'post') {
+        return;
+    }
+
+    if (!get_field('a_la_une', $post_id)) {
+        return;
+    }
+
+    $posts = get_posts([
+        'post_type'      => 'post',
+        'posts_per_page' => -1,
+        'post__not_in'   => [$post_id],
+        'meta_key'       => 'a_la_une',
+        'meta_value'     => 1,
+        'fields'         => 'ids'
+    ]);
+
+    foreach ($posts as $id) {
+        update_field('a_la_une', 0, $id);
+    }
+
+}, 20);

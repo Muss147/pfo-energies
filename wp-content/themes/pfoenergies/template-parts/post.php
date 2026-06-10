@@ -7,14 +7,14 @@
         <?php endif ?>
     </a>
     <a href="<?php the_permalink() ?>">
-        <h3 class="text-sm uppercase font-semibold mt-6"><?= the_title(); ?></h3>
+        <h3 class="text-sm uppercase font-semibold mt-6 line-clamp-2"><?= the_title(); ?></h3>
     </a>
-    <div class="flex items-center justify-between text-primary">
+    <div class="flex items-center justify-between text-primary mt-1">
         <div class="h-0.5 w-1/4 bg-primary"></div>
         <span class="font-light italic leading-none tracking-tight"><?= the_date('d/m/Y') ?></span>
     </div>
     <div class="mt-3 mb-6 font-light text-gray-800">
-        <?php the_excerpt(); ?>
+        <?= wp_trim_words(get_the_excerpt(), 28, '...'); ?>
     </div>
     <a href="<?php the_permalink() ?>" class="bg-primary text-white hover:bg-white hover:text-primary hover:border-primary border-2 text-md px-3 py-2 rounded-sm transition-colors duration-300 ease-in-out">
         <span class="inline-block ml-2"><?= __('Read more', 'pfoenergies') ?></span>

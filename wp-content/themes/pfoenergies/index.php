@@ -26,7 +26,7 @@
     <?php while ($featured->have_posts()) : $featured->the_post(); ?>
     <div class="max-w-7xl mx-auto py-8">
         <div class="inline-block mb-8">
-            <h2 class="text-xl text-primary uppercase leading-none tracking-tight font-semibold"><?php __('Featured', 'pfoenergies') ?></h2>
+            <h2 class="text-xl text-primary uppercase leading-none tracking-tight font-semibold"><?= __('Featured', 'pfoenergies') ?></h2>
             <div class="mt-1 h-0.5 w-16 bg-primary"></div>
         </div>
 
@@ -37,13 +37,14 @@
                     <span class="font-light italic"><?php echo get_the_date('d/m/Y'); ?></span>
                 </div>
                 <?php if (has_post_thumbnail()) : ?>
+                    <a href="<?php the_permalink(); ?>">
                     <?php the_post_thumbnail('full', [
                         'class' => 'w-full h-145 object-cover mt-3 shadow-xl'
-
                     ]); ?>
+                    </a>
                 <?php endif; ?>
                 <div class="mt-7 font-light text-gray-800">
-                    <?= wp_trim_words(get_the_excerpt(), 40); ?>
+                    <?= wp_trim_words(get_the_excerpt(), 45); ?>
                 </div>
             </div>
             <div class="flex items-center justify-between mt-5">
@@ -62,6 +63,15 @@
 
     <?php endif; ?>
 
+    <?php
+    $featured_post_id = null;
+
+    if ($featured->have_posts()) {
+        $featured->the_post();
+        $featured_post_id = get_the_ID();
+        wp_reset_postdata();
+    }
+    ?>
     <div class="max-w-7xl mx-auto py-8">
         <div class="inline-block mb-8">
             <h2 class="text-xl text-primary uppercase leading-none tracking-tight font-semibold"><?= __('More posts', 'pfoenergies') ?></h2>
@@ -71,7 +81,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             <?php if (have_posts()) : ?>
                 <?php while (have_posts()) : the_post(); ?>
-
+                
                 <?php get_template_part('template-parts/post') ?>
 
                 <?php endwhile; ?> 
@@ -79,7 +89,7 @@
                 <?php pfoenergies_pagination() ?>
 
             <?php else : ?>
-                <h2 class="col-span-3 text-center mt-24"><?php __('No posts found.', 'pfoenergies'); ?></h2>
+                <h2 class="col-span-3 text-center mt-24"><?= __('No posts found.', 'pfoenergies'); ?></h2>
             <?php endif; ?>
         </div>
     </div>
