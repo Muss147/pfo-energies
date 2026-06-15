@@ -1,8 +1,8 @@
     </main>
 
     <footer class="bg-primary text-white py-12 mt-20 w-full">
-        <div class="max-w-350 mx-auto grid grid-cols-5">
-            <div class="container col-span-1 flex flex-col items-start gap-8">
+        <div class="max-w-350 mx-auto px-4 md:px-6 grid grid-cols-1 lg:grid-cols-5 gap-y-12">
+            <div class="lg:col-span-1 flex flex-col md:flex-row lg:flex-col items-center md:items-start justify-between lg:justify-start gap-8">
                 <a href="<?= home_url('/'); ?>" class="col-span-3 lg:col-span-1 logo" title="<?= __('Homepage', 'pfoenergies') ?>">
                     <img alt="<?= __('Homepage', 'pfoenergies') ?>" src="<?= get_theme_mod('footer_logo') ?>" class="h-11">
                 </a>
@@ -16,7 +16,7 @@
                     </div>
                 </div>
             </div>
-            <div class="container col-span-4 flex items-start justify-end gap-8">
+            <div class="lg:col-span-4 flex flex-wrap md:flex-nowrap items-start justify-center md:justify-between lg:justify-end gap-8">
                 <?php dynamic_sidebar('footer') ?>
             </div>
         </div>

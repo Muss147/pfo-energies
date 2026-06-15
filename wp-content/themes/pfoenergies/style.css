@@ -106,4 +106,100 @@ header.header .current_page_parent a::after {
     background-color: var(--color-primary); /* #FE6748 Couleur secondaire */
     margin-top: 0.25rem;
 }
+@media (max-width: 1022px) {
+    header.header a[aria-current]::after,
+    header.header .current_page_parent a::after {
+        background-color: white;
+    }
+}
 
+
+/****** Swipper style ******/
+
+.swiper-button-prev,
+.swiper-button-next {
+    color: white !important;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    font-size: 24px !important;
+}
+
+/****** Mobile styles ******/
+
+.mobil__menu {
+    
+    button.btn__menu {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 3px;
+        width: 24px;
+        height: 24px;
+      
+        &:after,
+        &:before {
+            content: '';
+            display: block;
+            height: 0;
+            border-bottom: 2px solid currentColor;
+            width: 16px;
+            transition: all ease-out 0.3s;
+        }
+      
+        i {
+            display: block;
+            text-indent: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            height: 2px;
+            background-color: currentColor;
+            width: 16px;
+            transition: all ease-out 0.1s;
+        }
+    }
+}
+
+.mobile-displayed .btn__menu {
+    &:after {
+        transform: rotate(-45deg);
+        transform-origin: center;
+        position: absolute;
+        top: 50%;
+    }
+    
+    &:before {
+        transform: rotate(45deg);
+        transform-origin: center;
+        position: absolute;
+        top: 50%
+    }
+    
+    i {
+        opacity: 0;
+    }
+}
+
+/* MENU MOBILE */
+@media (max-width: 1022px) {
+    .navbar__menu {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-100%);
+        transition:
+            transform .3s ease,
+            opacity .3s ease;
+    }
+
+    header.mobile-displayed .navbar__menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .menu-site-web-du-groupe-container .menu,
+    .menu-mentions-legales-container .menu {
+        text-align: center;
+    }
+}
