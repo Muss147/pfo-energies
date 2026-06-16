@@ -1,9 +1,17 @@
 
 <?php get_header(); ?>
 
-    <div class="w-full h-168.75 bg-contain bg-center bg-no-repeat bg-fixed mt-14" style="background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('<?php echo get_template_directory_uri(); ?>/assets/img/actualites.png');">
-        <div class="max-w-350 mx-auto text-white py-14">
-            <h1 class="text-4xl uppercase font-semibold">
+    <?php 
+    $blog_page_id = get_option('page_for_posts');
+
+    $banner_url = has_post_thumbnail($blog_page_id) 
+        ? get_the_post_thumbnail_url($blog_page_id, 'full') 
+        : 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO8dOlyPQAH7QL4Bgm9FAAAAABJRU5ErkJggg=='; // Ton image par défaut
+    ?>
+    
+    <div class="w-full h-168.75 bg-cover bg-center bg-no-repeat bg-fixed" style="background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('<?= esc_url($banner_url); ?>');">        
+        <div class="max-w-350 mx-auto px-4 md:px-6 h-full py-14 mt-10">
+            <h1 class="text-4xl uppercase text-white font-semibold">
                 <?php if(is_category()): ?>
                     <?php single_cat_title() ?>
                 <?php else: ?>
@@ -24,7 +32,7 @@
     <?php if ($featured->have_posts()) : ?>
 
     <?php while ($featured->have_posts()) : $featured->the_post(); ?>
-    <div class="max-w-7xl mx-auto py-8">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 py-8">
         <div class="inline-block mb-8">
             <h2 class="text-xl text-primary uppercase leading-none tracking-tight font-semibold"><?= __('Featured', 'pfoenergies') ?></h2>
             <div class="mt-1 h-0.5 w-16 bg-primary"></div>
@@ -72,7 +80,7 @@
         wp_reset_postdata();
     }
     ?>
-    <div class="max-w-7xl mx-auto py-8">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 py-8">
         <div class="inline-block mb-8">
             <h2 class="text-xl text-primary uppercase leading-none tracking-tight font-semibold"><?= __('More posts', 'pfoenergies') ?></h2>
             <div class="mt-1 h-0.5 w-16 bg-primary"></div>
