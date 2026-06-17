@@ -10,7 +10,7 @@
     ?>
     
     <div class="w-full h-168.75 bg-cover bg-center bg-no-repeat bg-fixed" style="background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('<?= esc_url($banner_url); ?>');">        
-        <div class="max-w-350 mx-auto px-4 md:px-6 h-full py-14 mt-10">
+        <div class="max-w-350 mx-auto px-4 md:px-6 h-full py-14 mt-5 md:mt-19">
             <h1 class="text-4xl uppercase text-white font-semibold">
                 <?php if(is_category()): ?>
                     <?php single_cat_title() ?>

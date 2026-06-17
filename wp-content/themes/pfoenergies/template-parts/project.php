@@ -1,7 +1,7 @@
 <article class="w-full text-primary">
     <a href="<?php the_permalink() ?>" title="<?= esc_attr(get_the_title()) ?>">
         <?php if (has_post_thumbnail()) : ?>
-            <?php the_post_thumbnail('post-thumbnail', ['class' => 'object-cover shadow-xl/20']) ?>
+            <?php the_post_thumbnail('post-thumbnail', ['class' => 'object-cover w-full shadow-xl/20']) ?>
         <?php else : ?>
             <img class="w-full h-64 shadow-xl/20" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO8dOlyPQAH7QL4Bgm9FAAAAABJRU5ErkJggg==">
         <?php endif ?>

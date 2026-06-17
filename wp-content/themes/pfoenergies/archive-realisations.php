@@ -11,7 +11,7 @@
     ?>
     
     <div class="w-full h-168.75 bg-cover bg-center bg-no-repeat bg-fixed" style="background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('<?= esc_url($banner_url); ?>');">        
-        <div class="max-w-350 mx-auto px-4 md:px-6 h-full py-14 mt-10">
+        <div class="max-w-350 mx-auto px-4 md:px-6 h-full py-14 mt-5 md:mt-19">
             <h1 class="text-4xl uppercase text-white font-semibold">
                 <?php post_type_archive_title() ?>
             </h1>
@@ -24,7 +24,7 @@
             <div class="mt-1 h-0.5 w-16 bg-primary"></div>
         </div>
 
-        <form method="GET" class="flex items-center justify-center font-light italic gap-4">
+        <form method="GET" class="flex items-center justify-center text-sm sm:text-lg font-light italic gap-2 sm:gap-4">
             <label class="relative cursor-pointer text-gray-500
                 after:content-['/_'] after:ml-2 
                 has-checked:text-primary has-checked:before:content-[''] has-checked:before:absolute has-checked:before:-bottom-1 has-checked:before:bg-primary has-checked:before:w-5/6 has-checked:before:h-0.5" 
@@ -44,7 +44,7 @@
             </label>
         </form>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-8">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10 mt-8">
             <?php if (have_posts()) : ?>
                 
                 <?php while (have_posts()) : the_post(); ?>

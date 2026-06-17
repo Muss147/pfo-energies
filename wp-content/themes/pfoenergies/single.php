@@ -1,7 +1,7 @@
 
 <?php get_header(); ?>
     
-    <div class="max-w-7xl mx-auto py-8 mt-14">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 py-8 mt-3 lg:mt-14">
         <?php while (have_posts()) : the_post(); ?>
 
         <article class="w-full">
@@ -11,7 +11,7 @@
 
             <div class="flex items-end justify-between gap-4 mt-7">
                 <div class="text-primary">
-                    <h1 class="text-3xl uppercase font-semibold mb-6"><?php the_title(); ?></h1>
+                    <h1 class="text-xl md:text-3xl uppercase font-semibold mb-6"><?php the_title(); ?></h1>
                     <span class="font-light italic"><?= the_date('d/m/Y') ?></span>
                 
                     <div class="formatted mt-7 font-light text-gray-800">
@@ -40,7 +40,7 @@
 
     <?php if ($relatedPosts->have_posts()) : ?>
 
-    <div class="max-w-7xl mx-auto py-8">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 py-8">
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
 

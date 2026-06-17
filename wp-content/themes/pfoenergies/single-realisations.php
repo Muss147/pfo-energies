@@ -3,7 +3,7 @@
     
     <?php while (have_posts()) : the_post(); ?>
     
-    <div class="max-w-7xl mx-auto py-8 mt-14">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 py-8 mt-3 lg:mt-14">
 
         <article class="w-full">
             <?php if (has_post_thumbnail()): ?>
@@ -38,39 +38,39 @@
             get_field('duree_des_travaux') || 
             get_field('livraison')): ?>
 
-        <div class="flex flex-wrap lg:flex-nowrap items-start justify-between gap-4 leading-none tracking-tight mt-10">
-            <div class="text-center flex-1 t">
+        <div class="flex flex-wrap md:flex-nowrap items-start justify-between gap-6 leading-none tracking-tight mt-10">
+            <div class="text-center flex-1 min-w-24">
                 <h4 class="text-primary text-sm uppercase font-semibold">
                     <?php the_field('type_de_projet') ?>
                 </h4>
                 <span class="text-sm font-extralight text-gray-600"></span>
             </div>
             <?php if (get_field('concessionnaire')): ?>
-            <div class="text-center flex-1 t">
+            <div class="text-center flex-1 min-w-24">
                 <h4 class="text-primary text-sm uppercase font-semibold"><?= __('Dealer', 'pfoenergies') ?></h4>
                 <span class="text-sm font-extralight text-gray-600"><?php the_field('concessionnaire') ?></span>
             </div>
             <?php endif; ?>
             <?php if (get_field('maitre_douvrage')): ?>
-            <div class="text-center flex-1 t">
+            <div class="text-center flex-1 min-w-24">
                 <h4 class="text-primary text-sm uppercase font-semibold"><?= __('Master of Works', 'pfoenergies') ?></h4>
                 <span class="text-sm font-extralight text-gray-600"><?php the_field('maitre_douvrage') ?></span>
             </div>
             <?php endif; ?>
             <?php if (get_field('entreprise_associee')): ?>
-            <div class="text-center flex-1 t">
+            <div class="text-center flex-1 min-w-24">
                 <h4 class="text-primary text-sm uppercase font-semibold"><?= __('Associated Company', 'pfoenergies') ?></h4>
                 <span class="text-sm font-extralight text-gray-600"><?php the_field('entreprise_associee') ?></span>
             </div>
             <?php endif; ?>
             <?php if (get_field('duree_des_travaux')): ?>
-            <div class="text-center flex-1 t">
+            <div class="text-center flex-1 min-w-24">
                 <h4 class="text-primary text-sm uppercase font-semibold"><?= __('Duration of Works', 'pfoenergies') ?></h4>
                 <span class="text-sm font-extralight text-gray-600"><?php the_field('duree_des_travaux') ?> <?= __('months', 'pfoenergies') ?></span>
             </div>
             <?php endif; ?>
             <?php if (get_field('livraison')): ?>
-            <div class="text-center flex-1 t">
+            <div class="text-center flex-1 min-w-24">
                 <h4 class="text-primary text-sm uppercase font-semibold"><?= __('Delivery', 'pfoenergies') ?></h4>
                 <span class="text-sm font-extralight text-gray-600"><?php the_field('livraison') ?></span>
             </div>
@@ -96,11 +96,11 @@
         get_field('foyes_electrifies')): 
     ?>
     <div class="relative mt-10">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5">
-            <div class="col-span-3 w-full h-112 bg-cover bg-center bg-no-repeat shadow-xl/20 z-10" style="background-image: url('<?= $url_first_image; ?>');"></div>
-            <div class="col-span-2">
-                <div class="absolute inset-y-0 right-0 h-full max-w-5/12 w-full flex items-center">
-                    <div class="bg-primary text-white w-full py-5 pl-10 pr-24">
+        <div class="max-w-7xl mx-auto px-4 md:px-6 grid md:grid-cols-5">
+            <div class="md:col-span-3 w-full h-112 bg-cover bg-center bg-no-repeat shadow-xl/20 z-10" style="background-image: url('<?= $url_first_image; ?>');"></div>
+            <div class="md:col-span-2">
+                <div class="relative md:absolute inset-y-0 right-0 h-full max-w-full md:max-w-5/12 w-full flex items-center">
+                    <div class="bg-primary text-white w-full py-5 pl-6 sm:pl-10 pr-24">
                         <h4 class="uppercase text-center p-2 border border-white"><?= __('Key Figures', 'pfoenergies') ?></h4>
                         <ul class="font-extralight mt-8">
                             <?php if (get_field('panneaux_solaires')): ?>
@@ -129,7 +129,7 @@
     </div>
     <?php endif; ?>
 
-    <div class="max-w-7xl mx-auto mt-10">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 mt-10">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <?php foreach($gallery as $image): ?>
             <div class="w-full h-80 bg-cover bg-center bg-no-repeat shadow-xl/20" style="background-image: url('<?= wp_get_attachment_image_url($image->ID, 'project-gallery'); ?>');"></div>

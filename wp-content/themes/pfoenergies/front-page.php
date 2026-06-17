@@ -104,7 +104,7 @@
                     if ($icon): 
                     ?>
                     <img src="<?= esc_url($icon['url']) ?>"
-                        alt="<?= esc_attr($divisions->post_title) ?>"
+                        alt="<?= esc_attr($division->name) ?>"
                         class="w-full h-60 object-cover transition duration-500 group-hover:scale-105">
                     <?php endif ?>
                     <div class="p-5">
