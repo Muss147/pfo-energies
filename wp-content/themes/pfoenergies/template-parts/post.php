@@ -17,10 +17,10 @@
         <?= wp_trim_words(get_the_excerpt(), 28, '...'); ?>
     </div>
     <?php if ( ! is_front_page() ) : ?>
-    <a href="<?php the_permalink() ?>" class="mt-6 bg-primary text-white hover:bg-white hover:text-primary hover:border-primary border-2 text-md px-3 py-2 rounded-sm transition-colors duration-300 ease-in-out">
+    <a href="<?php the_permalink() ?>" class="inline-block mt-6 bg-primary text-white hover:bg-white hover:text-primary hover:border-primary border-2 text-md px-3 py-2 rounded-sm transition-colors duration-300 ease-in-out">
         <span class="inline-block ml-2"><?= __('Read more', 'pfoenergies') ?></span>
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline-block ml-2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 inline-block ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
         </svg>
     </a>
     <?php endif; ?>

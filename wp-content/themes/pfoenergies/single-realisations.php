@@ -100,7 +100,7 @@
             <div class="md:col-span-3 w-full h-112 bg-cover bg-center bg-no-repeat shadow-xl/20 z-10" style="background-image: url('<?= $url_first_image; ?>');"></div>
             <div class="md:col-span-2">
                 <div class="relative md:absolute inset-y-0 right-0 h-full max-w-full md:max-w-5/12 w-full flex items-center">
-                    <div class="bg-primary text-white w-full py-5 pl-6 sm:pl-10 pr-24">
+                    <div class="bg-primary text-white w-full py-5 pl-6 sm:pl-10 pr-6 sm:pr-10 md:pr-24">
                         <h4 class="uppercase text-center p-2 border border-white"><?= __('Key Figures', 'pfoenergies') ?></h4>
                         <ul class="font-extralight mt-8">
                             <?php if (get_field('panneaux_solaires')): ?>

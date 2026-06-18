@@ -15,3 +15,16 @@ add_filter('nav_menu_css_class', function (array $classes, WP_Post $item): array
 function is_realisations_url(string $url): bool  {
     return strpos($url, _x('realisations', 'URL', 'realisation')) !== false;
 }
+
+function pfoenergies_button(string $url, string $label, string $variant = 'primary'): void {
+
+    get_template_part(
+        'template-parts/components/button',
+        null,
+        [
+            'url'     => $url,
+            'label'   => $label,
+            'variant' => $variant
+        ]
+    );
+}

@@ -29,38 +29,26 @@ while (have_posts()) : the_post();
     </div>
 
     <div class="max-w-7xl mx-auto px-4 md:px-6 py-14 space-y-16">
-        <?php
-        $i = 1;
-
-        // La boucle tourne tant qu'ACF trouve un groupe nommé 'section_1', 'section_2', etc.
-        while (have_rows('section_' . $i)) : the_row();
-
-            // Comme on a fait "the_row()", on récupère les sous-champs directement
-            $title   = get_sub_field('title');   // Remplace par le nom exact de ton sous-champ titre
-            $content = get_sub_field('content', false, false); // Remplace par le nom exact de ton sous-champ contenu
-            ?>
-        <div class="space-y-12 <?php if ($i == 1): ?>relative<?php endif ?>">
-            <?php if ($title) : ?>
+        <div class="space-y-12 relative">
             <div class="inline-block">
-                <h2 class="text-xl text-primary uppercase leading-none tracking-tight font-semibold"><?= $title ?></h2>
+                <h2 class="text-xl text-primary uppercase leading-none tracking-tight font-semibold">Notre métier</h2>
                 <div class="mt-1 h-0.5 w-16 bg-primary"></div>
             </div>
-            <?php endif; ?>
-
-            <?php if ($content) : ?>
-                <?= $content; ?>
-            <?php endif; ?>
-
-            <?php if ($i == 1): ?>
-                <div class="absolute bottom-0 right-0 flex-none size-10 border-r border-b border-primary"></div>
-            <?php endif ?>
+            <div class="max-w-6xl mx-auto">
+                <div class="flex flex-col gap-6 font-light text-gray-800">
+                    <h4 class="uppercase font-extralight text-primary">Construire une énergie durable pour l'Afrique</h4>
+                    <p>Au Groupe PFO Africa, nous croyons que notre développement repose sur notre équipe diversifiée et talentueuse. Nous sommes une communauté
+                    passionnée par l’excellence et l’innovation.</p>
+                    <p>Rejoindre le Groupe PFO Africa, à travers sa filiale multi-énergies PFO Énergies, c’est embrasser une culture d’apprentissage continu, de
+                    collaboration et d’opportunités de croissance professionnelle.</p>
+                    <p>Explorer nos opportunités de carrière et découvrez comment contribuer à imaginer, construire et faire vivre l’Afrique de demain, à travers les solutions
+                    énergétiques durables.</p>
+                </div>
+            </div>
+            <div class="absolute bottom-0 right-0 flex-none size-10 border-r border-b border-primary"></div>
         </div>
-        <?php
-            $i++; // 💡 On incrémente le compteur pour tester la section suivante au prochain tour
-            endwhile; 
-        ?>
 
-        <!-- <div class="space-y-12">
+        <div class="space-y-12">
             <div class="inline-block">
                 <h2 class="text-xl text-primary uppercase leading-none tracking-tight font-semibold">Politique RH</h2>
                 <div class="mt-1 h-0.5 w-16 bg-primary"></div>
@@ -92,9 +80,9 @@ while (have_posts()) : the_post();
                 </div>
                 <div class="flex-none w-full h-72 bg-cover bg-center bg-no-repeat shadow-xl/20 order-1 md:order-2" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/img/bg/rh-politique-2.jpg');"> </div>
             </div>
-        </div> -->
+        </div>
 
-        <!-- <div class="space-y-12">
+        <div class="space-y-12">
             <div class="inline-block">
                 <h2 class="text-xl text-primary uppercase leading-none tracking-tight font-semibold">Chiffres-clés<br class="hidden md:block"> PFO Africa</h2>
                 <div class="mt-1 h-0.5 w-16 bg-primary"></div>
@@ -113,9 +101,9 @@ while (have_posts()) : the_post();
                     <p class="font-extralight">stages ou alternances par an</p>
                 </div>
             </div>
-        </div> -->
+        </div>
 
-        <!-- <div class="space-y-12">
+        <div class="space-y-12">
             <div class="inline-block">
                 <h2 class="text-xl text-primary uppercase leading-none tracking-tight font-semibold">Chiffres-clés<br class="hidden md:block"> PFO Énergies</h2>
                 <div class="mt-1 h-0.5 w-16 bg-primary"></div>
@@ -134,7 +122,7 @@ while (have_posts()) : the_post();
                     <p class="font-extralight">stages ou alternances par an</p>
                 </div>
             </div>
-        </div> -->
+        </div>
 
         <div class="space-y-12">
             <div class="inline-block">
