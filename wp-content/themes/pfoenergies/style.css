@@ -113,6 +113,11 @@ header.header .current_page_parent a::after {
     }
 }
 
+form ::placeholder {
+    font-style: italic;
+    font-size: .95rem;
+}
+
 
 /****** Swipper style ******/
 

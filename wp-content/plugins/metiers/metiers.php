@@ -14,7 +14,7 @@ add_action('plugins_loaded', function () {
 add_action('init', function () {
     register_post_type('metiers', [
         'label' => __('Metiers', 'metier'),
-        'menu_icon' => 'dashicons-portfolio',
+        'menu_icon' => 'dashicons-welcome-learn-more',
         'labels' => [
             'name'                     => __('Metiers', 'metier'),
             'singular_name'            => __('Metier', 'metier'),

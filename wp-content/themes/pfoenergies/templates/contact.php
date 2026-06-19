@@ -31,9 +31,10 @@ while (have_posts()) : the_post();
     <div class="max-w-7xl mx-auto px-4 md:px-6 py-14 space-y-10 font-extralight">
 
         <!-- Onglets -->
-        <div class="flex flex-wrap gap-8 md:gap-16 text-xl">
+        <div class="flex flex-wrap gap-4 md:gap-8 md:gap-16 text-base md:text-xl">
             <button
-                class="flex items-center gap-2 pb-2 border-b-2 border-primary text-primary">
+                class="tab-btn active flex items-center gap-2 pb-2 border-b-2 border-primary text-primary"
+                data-tab="contact">
                 <svg xmlns="http://www.w3.org/2000/svg" 
                         viewBox="0 0 64 64" 
                         stroke="currentColor" 
@@ -60,7 +61,8 @@ while (have_posts()) : the_post();
             </button>
 
             <button
-                class="flex items-center gap-2 pb-2 text-primary/70 hover:text-primary transition">
+                class="tab-btn flex items-center gap-2 pb-2 text-primary/70 hover:text-primary transition"
+                data-tab="quote">
                 <svg xmlns="http://www.w3.org/2000/svg" 
                         viewBox="0 0 24 24" 
                         fill="none" 
@@ -187,7 +189,7 @@ while (have_posts()) : the_post();
             </aside>
 
             <!-- Colonne droite -->
-            <div class="lg:col-span-8">
+            <div id="contact" class="tab-content opacity-100 transition-all duration-300 lg:col-span-8">
                 <h2 class="text-xl text-primary font-light">
                     Envoyez-nous un message
                 </h2>
@@ -206,6 +208,7 @@ while (have_posts()) : the_post();
                             <input
                                 type="text"
                                 placeholder="Votre prénom"
+                                required
                                 class="w-full border border-primary px-4 py-3 outline-none">
                         </div>
                         <div>
@@ -215,6 +218,7 @@ while (have_posts()) : the_post();
                             <input
                                 type="text"
                                 placeholder="Votre nom"
+                                required
                                 class="w-full border border-primary px-4 py-3 outline-none">
                         </div>
                     </div>
@@ -228,6 +232,7 @@ while (have_posts()) : the_post();
                             <input
                                 type="email"
                                 placeholder="Votre@email.com"
+                                required
                                 class="w-full border border-primary px-4 py-3 outline-none">
                         </div>
                         <div>
@@ -237,6 +242,7 @@ while (have_posts()) : the_post();
                             <input
                                 type="text"
                                 placeholder="+225 xx xx xx xx xx"
+                                required
                                 class="w-full border border-primary px-4 py-3 outline-none">
                         </div>
                     </div>
@@ -257,7 +263,7 @@ while (have_posts()) : the_post();
                                 Objet *
                             </label>
                             <select
-                                class="w-full h-full border border-primary px-4 py-3 outline-none">
+                                class="w-full h-14 border border-primary px-4 py-3 outline-none" required>
 
                                 <option>Sélectionner</option>
                                 <option>Demande d'information</option>
@@ -276,6 +282,7 @@ while (have_posts()) : the_post();
                         <textarea
                             rows="6"
                             placeholder="Détaillez votre message"
+                            required
                             class="w-full border border-primary px-4 py-3 outline-none resize-none"></textarea>
                     </div>
 
@@ -283,7 +290,7 @@ while (have_posts()) : the_post();
                     <label class="flex items-center gap-3 text-sm text-gray-600">
                         <input
                             type="checkbox"
-                            class="">
+                            class="" required>
                         <span>
                             J'accepte que mes données soient traitées conformément à la
                             <a href="#" class="text-primary font-medium">
@@ -294,31 +301,125 @@ while (have_posts()) : the_post();
                     </label>
 
                     <!-- Bouton -->
-                    <button
-                        type="submit"
-                        class="inline-flex items-center gap-3 bg-primary text-white px-6 py-3 hover:bg-white hover:text-primary border-2 border-primary transition">
-
-                        Envoyer
-
-                        <svg xmlns="http://www.w3.org/2000/svg"
-                            class="w-5 h-5"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor">
-
-                            <path stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M9 5l7 7-7 7"/>
-
+                    <button type="submit" class="bg-primary text-white hover:bg-white hover:text-primary hover:border-primary border-2 text-md px-3 py-2 rounded-sm transition-colors duration-300 ease-in-out">
+                        <span class="inline-block ml-2">Envoyer</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 inline-block ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                         </svg>
-
                     </button>
 
                 </form>
 
             </div>
 
+            <!-- Colonne droite -->
+            <div id="quote" class="tab-content hidden opacity-0 transition-all duration-300 lg:col-span-8">
+                <h2 class="text-xl text-primary font-light">
+                    Détaillez-nous votre projet
+                </h2>
+
+                <p class="text-gray-600 text-base mt-2 mb-8">
+                    Notre équipe vous répondra dans les plus brefs délais.
+                </p>
+
+                <form class="space-y-8">
+                    <!-- Ligne 1 -->
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-primary mb-2">
+                                Prénom *
+                            </label>
+                            <input
+                                type="text"
+                                placeholder="Votre prénom"
+                                required
+                                class="w-full border border-primary px-4 py-3 outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-primary mb-2">
+                                Nom *
+                            </label>
+                            <input
+                                type="text"
+                                placeholder="Votre nom"
+                                required
+                                class="w-full border border-primary px-4 py-3 outline-none">
+                        </div>
+                    </div>
+
+                    <!-- Ligne 2 -->
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-primary mb-2">
+                                Email *
+                            </label>
+                            <input
+                                type="email"
+                                placeholder="Votre@email.com"
+                                required
+                                class="w-full border border-primary px-4 py-3 outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-primary mb-2">
+                                Téléphone *
+                            </label>
+                            <input
+                                type="text"
+                                placeholder="+225 xx xx xx xx xx"
+                                required
+                                class="w-full border border-primary px-4 py-3 outline-none">
+                        </div>
+                    </div>
+
+                    <!-- Ligne 3 -->
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="col-span-2">
+                            <label class="block text-primary mb-2">
+                                Société
+                            </label>
+                            <input
+                                type="text"
+                                placeholder="Votre société"
+                                class="w-full border border-primary px-4 py-3 outline-none">
+                        </div>
+                    </div>
+
+                    <!-- Message -->
+                    <div>
+                        <label class="block text-primary mb-2">
+                            Message
+                        </label>
+                        <textarea
+                            rows="6"
+                            placeholder="Détaillez votre message"
+                            required
+                            class="w-full border border-primary px-4 py-3 outline-none resize-none"></textarea>
+                    </div>
+
+                    <!-- Consentement -->
+                    <label class="flex items-center gap-3 text-sm text-gray-600">
+                        <input
+                            type="checkbox"
+                            class="" required>
+                        <span>
+                            J'accepte que mes données soient traitées conformément à la
+                            <a href="#" class="text-primary font-medium">
+                                politique de confidentialité
+                            </a>
+                        </span>
+
+                    </label>
+
+                    <!-- Bouton -->
+                    <button type="submit" class="bg-primary text-white hover:bg-white hover:text-primary hover:border-primary border-2 text-md px-3 py-2 rounded-sm transition-colors duration-300 ease-in-out">
+                        <span class="inline-block ml-2">Envoyer</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 inline-block ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </button>
+
+                </form>
+            </div>
         </div>
 
     </div>

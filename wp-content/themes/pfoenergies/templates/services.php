@@ -30,24 +30,28 @@ while (have_posts()) : the_post();
 
     <div class="max-w-7xl mx-auto px-4 md:px-6 py-14 space-y-16">
         
+        <?php 
+            $cta_group = get_field('notre_savoir_faire');
+
+            if (have_rows('notre_savoir_faire') && !empty(array_filter((array)$cta_group))) : 
+                while (have_rows('notre_savoir_faire')) : the_row();
+                    // Stockage des sous-champs dans des variables pour épurer le HTML
+                    $title   = get_sub_field('title');
+                    $content = get_sub_field('content', false, false);
+        ?>
         <div class="space-y-10 relative">
+            <?php if ($title) : ?>
             <div class="inline-block">
-                <h2 class="text-xl text-primary uppercase leading-none tracking-tight font-semibold">Notre <br class="hidden md:block">savoir-faire</h2>
+                <h2 class="text-xl text-primary uppercase leading-none tracking-tight font-semibold"><?= $title ?></h2>
                 <div class="mt-1 h-0.5 w-16 bg-primary"></div>
             </div>
-            <div class="max-w-6xl mx-auto">
-                <div class="flex flex-col gap-6 font-light text-gray-800">
-                    <h4 class="uppercase font-extralight text-primary">La filiale énergies du groupe PFO Africa</h4>
-                    <p>PFO Énergies propose une expertise complète sur toute la chaîne de valeur énergétique, en développant des solutions clés en main couvrant l’ensemble du cycle
-                    de vie des projets. De l’identification et la sécurisation des sites à la structuration financière, en passant par les études techniques, l’ingénierie, la construction et la
-                    mise en exploitation, l’entreprise conçoit, réalise et opère des infrastructures énergétiques durables et performantes.</p>
-                    <p>Active dans le développement de centrales solaires, la production d’énergies renouvelables (solaire, biomasse, hydraulique) et les solutions énergétiques pour les
-                    secteurs commercial et industriel, elle intervient également comme producteur indépendant d’électricité et optimise l’exploitation des infrastructures existantes.
-                    PFO Énergies accompagne ainsi les acteurs publics et privés dans leur transition vers une énergie fiable, compétitive et responsable.</p>
-                </div>
-            </div>
-            <div class="absolute bottom-0 right-0 flex-none size-10 border-r border-b border-primary"></div>
+            <?php endif; ?>
+            
+            <?php if ($content) : ?>
+                    <?= $content; ?>
+            <?php endif; ?>
         </div>
+        <?php endwhile; endif ?>
 
         <?php
         $categories = get_terms([
@@ -177,34 +181,28 @@ while (have_posts()) : the_post();
         <?php endif; ?>
 
 
+        <?php 
+            $cta_group = get_field('avantages_concurrentiels');
+
+            if (have_rows('avantages_concurrentiels') && !empty(array_filter((array)$cta_group))) : 
+                while (have_rows('avantages_concurrentiels')) : the_row();
+                    // Stockage des sous-champs dans des variables pour épurer le HTML
+                    $title   = get_sub_field('title');
+                    $content = get_sub_field('content', false, false);
+        ?>
         <div class="space-y-6">
+            <?php if ($title) : ?>
             <div class="inline-block">
-                <h2 class="text-xl text-primary uppercase leading-none tracking-tight font-semibold">Avantages <br class="hidden md:block">concurrentiels</h2>
+                <h2 class="text-xl text-primary uppercase leading-none tracking-tight font-semibold"><?= $title ?></h2>
                 <div class="mt-1 h-0.5 w-16 bg-primary"></div>
             </div>
-            <div class="max-w-6xl mx-auto">
-                <div class="max-w-3xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 text-primary border border-primary">
-                    <div class="flex items-center justify-center sm:text-lg lg:text-xl p-10 bg-primary text-white">
-                        <p>Présent dans 4 pays : Côte d’Ivoire - Burkina Faso - Mali - Togo</p>
-                    </div>
-                    <div class="flex items-center justify-center sm:text-lg lg:text-xl p-10">
-                        <p>Maîtrise du cycle de développement d’un projet énergétique</p>
-                    </div>
-                    <div class="flex items-center justify-center sm:text-lg lg:text-xl p-10 bg-primary text-white sm:bg-transparent sm:text-primary md:bg-primary md:text-white">
-                        <p>Une approche long- terme</p>
-                    </div>
-                    <div class="flex items-center justify-center sm:text-lg lg:text-xl p-10 bg-white text-primary sm:bg-primary sm:text-white md:bg-transparent md:text-primary">
-                        <p>Maîtrise des aspects juridiques et fiscaux de nos pays d’intervention</p>
-                    </div>
-                    <div class="flex items-center justify-center sm:text-lg lg:text-xl p-10 bg-primary text-white">
-                        <p>Un réseau d’experts locaux et internationaux</p>
-                    </div>
-                    <div class="flex items-center justify-center sm:text-lg lg:text-xl p-10">
-                        <p>Capacité d’investissement et d’exécution</p>
-                    </div>
-                </div>
-            </div>
+            <?php endif; ?>
+            
+            <?php if ($content) : ?>
+                    <?= $content; ?>
+            <?php endif; ?>
         </div>
+        <?php endwhile; endif ?>
     </div>
 
 <?php 
