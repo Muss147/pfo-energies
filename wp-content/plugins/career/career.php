@@ -39,7 +39,7 @@ add_action('init', function () {
             'item_scheduled'           => __('Career scheduled.', 'career' ),
             'item_updated'             => __('Career updated.', 'career' ),
         ],
-        'has_archive' => true,
+        'has_archive' => false,
         'public' => true,
         'hierarchical' => false,
         'exclude_from_search' => false,

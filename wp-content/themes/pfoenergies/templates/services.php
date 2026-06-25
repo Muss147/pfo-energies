@@ -18,7 +18,7 @@ while (have_posts()) : the_post();
         : 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO8dOlyPQAH7QL4Bgm9FAAAAABJRU5ErkJggg=='; // Ton image par défaut
     ?>
     
-    <div class="w-full h-168.75 bg-cover bg-center bg-no-repeat bg-fixed" style="background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('<?= esc_url($banner_url); ?>');">
+    <div class="w-full h-168.75 bg-cover bg-center bg-no-repeat lg:bg-fixed" style="background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('<?= esc_url($banner_url); ?>');">
         <div class="max-w-350 mx-auto px-4 md:px-6 h-full py-14 mt-5 md:mt-19">
             <div class="max-w-full lg:max-w-2/5 w-full text-white">
                 <h1 class="text-2xl md:text-4xl uppercase font-semibold">
@@ -62,7 +62,7 @@ while (have_posts()) : the_post();
 
         <div class="space-y-10">
             <div class="inline-block">
-                <h2 class="text-xl text-primary uppercase leading-none tracking-tight font-semibold">Métiers</h2>
+                <h2 class="text-xl text-primary uppercase leading-none tracking-tight font-semibold"><?= __('Careers', 'pfoenergies') ?></h2>
                 <div class="mt-1 h-0.5 w-16 bg-primary"></div>
             </div>
             <div class="space-y-6 grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-0">

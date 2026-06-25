@@ -9,7 +9,7 @@
         : 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO8dOlyPQAH7QL4Bgm9FAAAAABJRU5ErkJggg=='; // Ton image par défaut
     ?>
     
-    <div class="w-full h-168.75 bg-cover bg-center bg-no-repeat bg-fixed" style="background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('<?= esc_url($banner_url); ?>');">        
+    <div class="w-full h-168.75 bg-cover bg-center bg-no-repeat lg:bg-fixed" style="background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('<?= esc_url($banner_url); ?>');">        
         <div class="max-w-350 mx-auto px-4 md:px-6 h-full py-14 mt-5 md:mt-19">
             <h1 class="text-4xl uppercase text-white font-semibold">
                 <?php if(is_category()): ?>
@@ -40,8 +40,8 @@
 
         <article class="w-full">
             <div class="pr-0 sm:pr-12">
-                <div class="flex items-center justify-between text-primary">
-                    <a href="<?php the_permalink(); ?>"><h3 class="text-md uppercase font-semibold mb-2"><?php the_title(); ?></h3></a>
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 text-primary">
+                    <a href="<?php the_permalink(); ?>"><h3 class="text-md uppercase font-semibold"><?php the_title(); ?></h3></a>
                     <span class="font-light italic"><?php echo get_the_date('d/m/Y'); ?></span>
                 </div>
                 <?php if (has_post_thumbnail()) : ?>

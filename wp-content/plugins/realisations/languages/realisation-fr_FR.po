@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Realisation Plugin\n"
-"POT-Creation-Date: 2026-06-10 00:19+0000\n"
-"PO-Revision-Date: 2026-06-10 00:21+0000\n"
+"POT-Creation-Date: 2026-06-10 00:21+0000\n"
+"PO-Revision-Date: 2026-06-24 02:59+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -24,88 +24,88 @@ msgstr "Projet"
 
 #: realisations.php:21
 msgid "Edit project"
-msgstr ""
+msgstr "Modifier le projet"
 
 #: realisations.php:22
 msgid "New project"
-msgstr ""
+msgstr "Nouveau projet"
 
 #: realisations.php:23
 msgid "View project"
-msgstr ""
+msgstr "Voir le projet"
 
 #: realisations.php:24
 msgid "View projects"
-msgstr ""
+msgstr "Voir les projets"
 
 #: realisations.php:25
 msgid "Search projects"
-msgstr ""
+msgstr "Rechercher des projets"
 
 #: realisations.php:26
 msgid "No projects found."
-msgstr "Aucun projet trouvé."
+msgstr "Aucun projets trouvé."
 
 #: realisations.php:27
 msgid "No projects found in Trash"
-msgstr ""
+msgstr "Aucun projet trouvé dans la corbeille"
 
 #: realisations.php:28
 msgid "All projects"
-msgstr ""
+msgstr "Tous les projets"
 
 #: realisations.php:29
 msgid "Project archive"
-msgstr ""
+msgstr "Archives des projets"
 
 #: realisations.php:30
 msgid "Project attributes"
-msgstr ""
+msgstr "Attributs des projets"
 
 #: realisations.php:31
 msgid "Insert into project"
-msgstr ""
+msgstr "Insérer dans le projet"
 
 #: realisations.php:32
 msgid "Uploaded to this project"
-msgstr ""
+msgstr "Ajouté à ce projet"
 
 #: realisations.php:33
 msgid "Filter projects list"
-msgstr ""
+msgstr "Filtrer la liste des projets"
 
 #: realisations.php:34
 msgid "Project list navigation"
-msgstr ""
+msgstr "Navigation dans la liste des projets"
 
 #: realisations.php:35
 msgid "Project list"
-msgstr ""
+msgstr "Liste des projets"
 
 #: realisations.php:36
 msgid "Project published."
-msgstr ""
+msgstr "Projet publié."
 
 #: realisations.php:37
 msgid "Project published privately."
-msgstr ""
+msgstr "Projet publié à titre privé."
 
 #: realisations.php:38
 msgid "Project reverted to draft."
-msgstr ""
+msgstr "Le projet a été replacé en version brouillon."
 
 #: realisations.php:39
 msgid "Project scheduled."
-msgstr ""
+msgstr "Projet prévu."
 
 #: realisations.php:40
 msgid "Project updated."
-msgstr ""
+msgstr "Mise à jour du projet."
 
 #: realisations.php:47
 msgctxt "URL"
 msgid "realisations"
-msgstr ""
+msgstr "realisations"
 
 #: realisations.php:55 realisations.php:56
 msgid "Status"
@@ -113,11 +113,11 @@ msgstr "Statut"
 
 #: realisations.php:57
 msgid "Search Status"
-msgstr ""
+msgstr "État de la recherche"
 
 #: realisations.php:58
 msgid "Popular Status"
-msgstr ""
+msgstr "Popularité"
 
 #: realisations.php:59
 msgid "All Status"
@@ -141,108 +141,108 @@ msgstr "Ajouter un nouveau statut"
 
 #: realisations.php:64
 msgid "New Status Name"
-msgstr ""
+msgstr "Nouveau nom de statut"
 
 #: realisations.php:65
 msgid "Separate Status with commas"
-msgstr ""
+msgstr "Séparer les statuts par des virgules"
 
 #: realisations.php:66
 msgid "Add or remove Status"
-msgstr ""
+msgstr "Ajouter ou supprimer un statut"
 
 #: realisations.php:67
 msgid "Choose from the most used Status"
-msgstr ""
+msgstr "Choisissez parmi les statuts les plus courants"
 
 #: realisations.php:68
 msgid "No Status found."
-msgstr ""
+msgstr "Aucun statut trouvé."
 
 #: realisations.php:69
 msgid "No Status"
-msgstr ""
+msgstr "Aucun statut"
 
 #: realisations.php:70
 msgid "Status list navigation"
-msgstr ""
+msgstr "Navigation dans la liste des statuts"
 
 #: realisations.php:71
 msgid "Status list"
-msgstr ""
+msgstr "Liste des statuts"
 
 #: realisations.php:72
 msgid "&larr; Back to Status"
-msgstr ""
+msgstr "&larr; Retour à la rubrique « Statut »"
 
 #: realisations.php:78
 msgid "Locations"
-msgstr "Localisations"
+msgstr "Lieux"
 
 #: realisations.php:79
 msgid "Location"
-msgstr ""
+msgstr "Lieu"
 
 #: realisations.php:80
 msgid "Search Locations"
-msgstr ""
+msgstr "Rechercher des lieux"
 
 #: realisations.php:81
 msgid "Popular Locations"
-msgstr ""
+msgstr "Lieux populaires"
 
 #: realisations.php:82
 msgid "All Locations"
-msgstr ""
+msgstr "Tous les sites"
 
 #: realisations.php:83
 msgid "Edit Location"
-msgstr ""
+msgstr "Modifier l'emplacement"
 
 #: realisations.php:84
 msgid "View Location"
-msgstr ""
+msgstr "Voir l'emplacement"
 
 #: realisations.php:85
 msgid "Update Location"
-msgstr ""
+msgstr "Mettre à jour l'emplacement"
 
 #: realisations.php:86
 msgid "Add New Location"
-msgstr ""
+msgstr "Ajouter un nouveau lieu"
 
 #: realisations.php:87
 msgid "New Location Name"
-msgstr ""
+msgstr "Nom du nouvel emplacement"
 
 #: realisations.php:88
 msgid "Separate Locations with commas"
-msgstr ""
+msgstr "Séparer les lieux par des virgules"
 
 #: realisations.php:89
 msgid "Add or remove Locations"
-msgstr ""
+msgstr "Ajouter ou supprimer des lieux"
 
 #: realisations.php:90
 msgid "Choose from the most used Locations"
-msgstr ""
+msgstr "Faites votre choix parmi les lieux les plus fréquentés"
 
 #: realisations.php:91
 msgid "No Locations found."
-msgstr ""
+msgstr "Aucun lieu trouvé."
 
 #: realisations.php:92
 msgid "No Locations"
-msgstr ""
+msgstr "Aucun lieu"
 
 #: realisations.php:93
 msgid "Locations list navigation"
-msgstr ""
+msgstr "Navigation dans la liste des lieux"
 
 #: realisations.php:94
 msgid "Locations list"
-msgstr ""
+msgstr "Liste des lieux"
 
 #: realisations.php:95
 msgid "&larr; Back to Locations"
-msgstr ""
+msgstr "&larr; Retour à la liste des lieux"

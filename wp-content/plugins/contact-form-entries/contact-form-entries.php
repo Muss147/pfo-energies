@@ -2,7 +2,7 @@
 /**
 * Plugin Name: Contact Form Entries
 * Description: Save form submissions to the database from <a href="https://wordpress.org/plugins/contact-form-7/">Contact Form 7</a>, <a href="https://wordpress.org/plugins/ninja-forms/">Ninja Forms</a>, <a href="https://elementor.com/widgets/form-widget/">Elementor Forms</a> and <a href="https://wordpress.org/plugins/wpforms-lite/">WP Forms</a>.
-* Version: 1.5.1
+* Version: 1.5.2
 * Requires at least: 3.8
 * Author URI: https://www.crmperks.com
 * Plugin URI: https://www.crmperks.com/plugins/contact-form-plugins/crm-perks-forms/
@@ -25,7 +25,7 @@ class vxcf_form {
   public static $type = "vxcf_form";
   public static $path = ''; 
 
-  public static  $version = '1.5.1';
+  public static  $version = '1.5.2';
   public static $upload_folder = 'crm_perks_uploads';
   public static $db_version='';  
   public static $base_url='';  
@@ -626,7 +626,7 @@ error_reporting(E_ALL);*/
     
    // $d=$record->get_form_settings( 'form_fields' ); //form_name
     $data = $record->get( 'fields' );
-   // $raw_files = $record->get( 'files' );
+    $raw_files = $record->get( 'files' );
     $form_id=$form_id_p.'_'.$post_id_p;
     $track=$this->track_form_entry('el',$form_id);
     $fields=self::get_form_fields('el_'.$form_id);
@@ -637,16 +637,16 @@ if(!empty($data)){
     if(in_array($v['type'],array('html','step','recaptcha','recaptcha_v3','honeypot'))){ 
       continue;  
     }    
-$val=$v['raw_value'];
-if(in_array($v['type'],array('upload','file'))){ 
-  $upload_files[$v['id']]=$val;  
+$val=$v['raw_value']; //var_dump($v);
+if(in_array($v['type'],array('upload','file')) && isset($raw_files[$v['id']]) && isset($raw_files[$v['id']]['path'])){
+  $upload_files[$v['id']]=$raw_files[$v['id']]['path'];   
 }else{
 
  if(in_array($v['type'],array('checkbox','multiselect'))){
  // $val=array_map('trim',explode(',',$val));     //need it for value not for raw value
 }
 $lead[$v['id']]=$val;
-}    } } //var_dump($upload_files); die();
+}    } } //var_dump($upload_files,$raw_files); //die();
 if($track ){ //&& !empty(self::$is_pr)
   $upload_files=$this->copy_files($upload_files); 
 }  
@@ -714,16 +714,14 @@ $post_data=$submission->get_posted_data();
  $lead=array(); 
 if(is_array($post_data)){
   foreach($post_data as $k=>$val){
-    if(in_array($k,array('vx_width','vx_height','vx_url','g-recaptcha-response'))){ continue; } 
+    if(in_array($k,array('vx_width','vx_height','vx_url','g-recaptcha-response'))){ continue; }
+  $field_type='';   
        if(isset($tags[$k])){
           $v=$tags[$k];  //$v is empty for non form fields 
-      }
-     $name=$k;  //$v['name'] //if empty then $v is old
-//var_dump($v);
- if(isset($uploaded_files[$name])){
-  $val=$uploaded_files[$name];
-   }
-
+  if(isset($v['type'])){
+      $field_type=$v['type'];
+  }
+}
    //disabled it @feb-2024 , dnd plugin now uses correct file urls because it converts normal file url to http://localhost/wp6/wp-content/uploads/wp_dndcf7_uploads/wpcf7-files/
  /*  if( !empty($val) && isset($v['type_']) && $v['type_'] == 'mfile' && function_exists('dnd_get_upload_dir') ){
       $dir=dnd_get_upload_dir(); 
@@ -737,20 +735,25 @@ if(is_array($post_data)){
        
    $val=$f_arr;   
    }*/
-if( !empty($val) && is_array($val) && isset($v['type_']) && $v['type_'] == 'mfilea'){ //escape wpcf7-files/testt'"><img src=x onerror=alert(1).jpg
-   $temp_val=array();
-    foreach($val as $kk=>$vv){
+//if( !empty($val) && is_array($val) && isset($v['type_']) && $v['type_'] == 'mfilea'){ //escape wpcf7-files/testt'"><img src=x onerror=alert(1).jpg
+if( $field_type == 'file'){ 
+if(isset($uploaded_files[$name])){
+  $val=$uploaded_files[$name];
+   }
+   if(is_array($val)){
+       $temp_val=array();
+       foreach($val as $kk=>$vv){
      $temp_val[$kk]=sanitize_url($vv);   
     }
 $val=$temp_val;
-}
-    if(!isset($uploaded_files[$name])){
-     $val=wp_unslash($val);   
-    }        
+   }
+}else{
+ $val=wp_unslash($val);     
+}       
   $lead[$k]=$val;          
   }  
 }
-//var_dump($lead,$post_data); die('-----------');
+//var_dump($lead,$uploaded_files); die('-----------');
 
 $form_arr=array('id'=>$form_id,'name'=>$form_title,'fields'=>$tags);
 $this->create_entry($lead,$form_arr,'cf','',$track);

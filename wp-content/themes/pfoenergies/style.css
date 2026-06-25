@@ -118,6 +118,34 @@ form ::placeholder {
     font-size: .95rem;
 }
 
+/* Search modal */
+.search-backdrop {
+    backdrop-filter: blur(4px);
+    transition-property: all;
+    transition-timing-function: ease;
+    transition-duration: 300ms;
+    width: 100%;
+    height: 100%;
+
+    background-color: color-mix(
+        in srgb,
+        #000 30%,
+        transparent
+    );
+}
+
+.search-modal {
+    opacity: 0;
+    visibility: hidden;
+    width: 100%;
+    height: 100%;
+    transition: all .3s ease;
+}
+
+.search-modal.is-open {
+    opacity: 1;
+    visibility: visible;
+}
 
 /****** Swipper style ******/
 

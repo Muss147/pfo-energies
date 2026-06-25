@@ -1180,7 +1180,7 @@ if($type == 'file' ){
 //delete files
 $files=array();
 if(!empty($detail[$name]['value']) ){
-    $db_files= maybe_unserialize($detail[$name]['value']);
+    $db_files= $detail[$name]['value'];
      if(is_serialized($db_files)){
            $db_files=unserialize($db_files, array('allowed_classes' => false));
          }
@@ -1190,11 +1190,11 @@ if(!empty($detail[$name]['value']) ){
         }
           if(is_array($db_files)){
           foreach($db_files as $k=>$file){
-if(!isset($_POST['files_'.$name][$k])){   
+if(!isset($_POST['files_'.$name][$k])){  
     //delete old file
-    if( file_exists($upload['dir'].$file)){
-        
-    @unlink($upload['dir'].$file);    
+   $real_file=realpath($upload['dir'].$file);
+    if( file_exists($real_file) && strpos($real_file,'/crm_perks_uploads/') !== false){      
+    @unlink($real_file);    
     }    
                }else{ 
              $files[]=$file;      
@@ -1202,6 +1202,7 @@ if(!isset($_POST['files_'.$name][$k])){
           }
           }
 }
+die();
 $not_allowed_files = array( 'js', 'jse', 'jar', 'php', 'php3', 'php4', 'php5', 'phtml', 'svg', 'swf', 'exe', 'html', 'htm', 'shtml', 'xhtml', 'xml', 'css', 'asp', 'aspx', 'jsp', 'sql', 'hta', 'dll', 'bat', 'com', 'sh', 'bash', 'py', 'pl', 'dfxp' );
 if(!empty($_FILES)){
               if(isset($_FILES[$field['name']]['name']) && is_array($_FILES[$field['name']]['name'])){

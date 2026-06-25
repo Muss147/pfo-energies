@@ -1,0 +1,252 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Metier Plugin\n"
+"POT-Creation-Date: 2026-06-20 18:28+0000\n"
+"PO-Revision-Date: 2026-06-20 18:41+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.9\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_x:1,2c;_n\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: metiers.php:16 metiers.php:19
+msgid "Metiers"
+msgstr "Métiers"
+
+#: metiers.php:20
+msgid "Metier"
+msgstr "Métier"
+
+#: metiers.php:21
+msgid "Edit metier"
+msgstr "Modifier le métier"
+
+#: metiers.php:22
+msgid "New metier"
+msgstr "Nouveau métier"
+
+#: metiers.php:23
+msgid "View metier"
+msgstr "Voir le métier"
+
+#: metiers.php:24
+msgid "View metiers"
+msgstr "Voir les métiers"
+
+#: metiers.php:25
+msgid "Search metiers"
+msgstr "Rechercher des métiers"
+
+#: metiers.php:26
+msgid "No metiers found."
+msgstr "Aucun métier trouvé."
+
+#: metiers.php:27
+msgid "No metiers found in Trash"
+msgstr "Aucun métier trouvé dans la corbeille"
+
+#: metiers.php:28
+msgid "All metiers"
+msgstr "Tous les métiers"
+
+#: metiers.php:29
+msgid "Metier archive"
+msgstr "Archives « Métier »"
+
+#: metiers.php:30
+msgid "Metier attributes"
+msgstr "Attributs de métier"
+
+#: metiers.php:31
+msgid "Insert into metier"
+msgstr "Insérer dans « métier »"
+
+#: metiers.php:32
+msgid "Uploaded to this metier"
+msgstr "Ajouté à ce « métier »"
+
+#: metiers.php:33
+msgid "Filter metiers list"
+msgstr "Filtrer la liste des métiers"
+
+#: metiers.php:34
+msgid "Metier list navigation"
+msgstr "Navigation dans la liste des métiers"
+
+#: metiers.php:35
+msgid "Metier list"
+msgstr "Liste des métiers"
+
+#: metiers.php:36
+msgid "Metier published."
+msgstr "Metier publié."
+
+#: metiers.php:37
+msgid "Metier published privately."
+msgstr "Metier a publié à compte d'auteur."
+
+#: metiers.php:38
+msgid "Metier reverted to draft."
+msgstr "Metier est revenu à la version du brouillon."
+
+#: metiers.php:39
+msgid "Metier scheduled."
+msgstr "Métier programmé."
+
+#: metiers.php:40
+msgid "Metier updated."
+msgstr "Métier mis à jour."
+
+#: metiers.php:47
+msgctxt "URL"
+msgid "metiers"
+msgstr ""
+
+#: metiers.php:55
+msgid "Categories"
+msgstr "Catégories"
+
+#: metiers.php:56
+msgid "Category"
+msgstr "Catégorie"
+
+#: metiers.php:57
+msgid "Search Category"
+msgstr "Rechercher une catégorie"
+
+#: metiers.php:58
+msgid "Popular Category"
+msgstr "Catégorie populaire"
+
+#: metiers.php:59
+msgid "All Category"
+msgstr "Toutes les catégories"
+
+#: metiers.php:60
+msgid "Edit Category"
+msgstr "Modifier la catégorie"
+
+#: metiers.php:61
+msgid "View Category"
+msgstr "Voir la catégorie"
+
+#: metiers.php:62
+msgid "Update Category"
+msgstr "Mettre à jour la catégorie"
+
+#: metiers.php:63
+msgid "Add New Category"
+msgstr "Ajouter une nouvelle catégorie"
+
+#: metiers.php:64
+msgid "New Category Name"
+msgstr "Nom de la nouvelle catégorie"
+
+#: metiers.php:65
+msgid "Separate Category with commas"
+msgstr "Séparer les catégories par des virgules"
+
+#: metiers.php:66
+msgid "Add or remove Category"
+msgstr "Ajouter ou supprimer une catégorie"
+
+#: metiers.php:67
+msgid "Choose from the most used Category"
+msgstr "Choisissez parmi les catégories les plus consultées"
+
+#: metiers.php:68
+msgid "No Category found."
+msgstr "Aucune catégorie trouvée."
+
+#: metiers.php:69
+msgid "No Category"
+msgstr "Pas de catégorie."
+
+#: metiers.php:70
+msgid "Category list navigation"
+msgstr "Navigation dans la liste des catégories"
+
+#: metiers.php:71
+msgid "Category list"
+msgstr "Liste des catégories"
+
+#: metiers.php:72
+msgid "&larr; Back to Category"
+msgstr "&larr; Retour à la catégorie"
+
+#: metiers.php:78
+msgid "Divisions"
+msgstr ""
+
+#: metiers.php:79
+msgid "Division"
+msgstr ""
+
+#: metiers.php:80
+msgid "Search Divisions"
+msgstr "Rechercher des divisions"
+
+#: metiers.php:81
+msgid "Popular Divisions"
+msgstr "Divisions populaires"
+
+#: metiers.php:82
+msgid "All Divisions"
+msgstr "Toutes les divisions"
+
+#: metiers.php:83
+msgid "Edit Division"
+msgstr "Modifier la division"
+
+#: metiers.php:84
+msgid "View Division"
+msgstr "Voir la division"
+
+#: metiers.php:85
+msgid "Update Division"
+msgstr "Mettre à jour la division"
+
+#: metiers.php:86
+msgid "Add New Division"
+msgstr "Ajouter une nouvelle division"
+
+#: metiers.php:87
+msgid "New Division Name"
+msgstr "Nom de la nouvelle division"
+
+#: metiers.php:88
+msgid "Separate Divisions with commas"
+msgstr "Séparez les divisions par des virgules"
+
+#: metiers.php:89
+msgid "Add or remove Divisions"
+msgstr "Ajouter ou supprimer des divisions"
+
+#: metiers.php:90
+msgid "Choose from the most used Divisions"
+msgstr "Faites votre choix parmi les divisions les plus courantes"
+
+#: metiers.php:91
+msgid "No Divisions found."
+msgstr "Aucune division trouvée."
+
+#: metiers.php:92
+msgid "No Divisions"
+msgstr "Pas de divisions"
+
+#: metiers.php:93
+msgid "Divisions list navigation"
+msgstr "Navigation dans la liste des divisions"
+
+#: metiers.php:94
+msgid "Divisions list"
+msgstr "Liste des divisions"
+
+#: metiers.php:95
+msgid "&larr; Back to Divisions"
+msgstr "&larr; Retour aux divisions"

@@ -9,6 +9,8 @@ Template Name: À propos
 <?php
 /*
 pt-6
+p-10
+lg:grid-cols-2
 */
 ?>
 
@@ -24,7 +26,7 @@ while (have_posts()) : the_post();
         : 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO8dOlyPQAH7QL4Bgm9FAAAAABJRU5ErkJggg=='; // Ton image par défaut
     ?>
     
-    <div class="w-full h-168.75 bg-cover bg-center bg-no-repeat bg-fixed" style="background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('<?= esc_url($banner_url); ?>');">
+    <div class="w-full h-168.75 bg-cover bg-center bg-no-repeat lg:bg-fixed" style="background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('<?= esc_url($banner_url); ?>');">
         <div class="max-w-350 mx-auto px-4 md:px-6 h-full py-14 mt-5 md:mt-19">
             <div class="max-w-full lg:max-w-2/5 w-full text-white">
                 <h1 class="text-2xl md:text-4xl uppercase font-semibold">
@@ -41,27 +43,28 @@ while (have_posts()) : the_post();
 
             if (have_rows('banner_top') && !empty(array_filter((array)$cta_group))) : 
                 while (have_rows('banner_top')) : the_row();
-                    // Stockage des sous-champs dans des variables pour épurer le HTML
-                    $date_creation       = get_sub_field('date_de_creation');
-                    $localisation = get_sub_field('localisation');
                     $image_url   = get_sub_field('logo');
-                    $equipe = get_sub_field('equipe_specialisee');
         ?>
         <div class="flex flex-col md:flex-row gap-6 items-center justify-between">
             <img alt="" src="<?= esc_url($image_url) ?>" class="h-8 md:h-11">
             <div class="flex flex-col md:flex-row justify-center md:justify-end text-primary text-base gap-4 md:gap-0">
-                <div class="text-center md:text-left px-6 md:border-r-2 md:border-primary">
-                    <h4 class="font-bold">Date de création</h4>
-                    <span class="font-extralight text-sm"><?= esc_html($date_creation); ?></span>
+                <?php 
+                $i = 1;
+                while ($item = get_sub_field('item_' . $i)) :
+                    $title   = $item['titre'] ?? '';
+                    $content = $item['contenu'] ?? '';
+
+                    if (empty($title) && empty($content)) {
+                        $i++; continue;
+                    }
+                ?>
+                <div class="text-center md:text-left px-6 md:border-r-2 md:border-primary md:last:border-r-0">
+                    <?php if ($title) : ?><h4 class="font-bold"><?= esc_html($title); ?></h4><?php endif; ?>
+                    <?php if ($content) : ?>
+                        <span class="font-extralight text-sm"><?= esc_html($content); ?></span>
+                    <?php endif; ?>
                 </div>
-                <div class="text-center md:text-left px-6 md:border-r-2 md:border-primary">
-                    <h4 class="font-bold">Localisation</h4>
-                    <span class="font-extralight text-sm"><?= esc_html($localisation); ?></span>
-                </div>
-                <div class="text-center md:text-left px-6">
-                    <h4 class="font-bold">Équipe spécialisée</h4>
-                    <span class="font-extralight text-sm"><?= esc_html($equipe); ?></span>
-                </div>
+                <?php $i++; endwhile; ?>
             </div>
         </div>
         <?php endwhile; endif ?>

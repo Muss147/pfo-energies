@@ -1,0 +1,180 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Career Plugin\n"
+"POT-Creation-Date: 2026-06-20 18:47+0000\n"
+"PO-Revision-Date: 2026-06-20 19:08+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.9\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_x:1,2c;_n\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: career.php:16 career.php:19
+msgid "Careers"
+msgstr "Carrières"
+
+#: career.php:20
+msgid "Career"
+msgstr "Carrière"
+
+#: career.php:21
+msgid "Edit career"
+msgstr "Modifier la carrière"
+
+#: career.php:22
+msgid "New career"
+msgstr "Nouvelle carrière"
+
+#: career.php:23
+msgid "View career"
+msgstr "Voir la carrière"
+
+#: career.php:24
+msgid "View careers"
+msgstr "Consulter les carrières"
+
+#: career.php:25
+msgid "Search careers"
+msgstr "Rechercher des carrières"
+
+#: career.php:26
+msgid "No careers found."
+msgstr "Aucune carrière trouvée."
+
+#: career.php:27
+msgid "No careers found in Trash"
+msgstr "Aucune carrière trouvée dans la rubrique « Corbeille »"
+
+#: career.php:28
+msgid "All careers"
+msgstr "Toutes les carrières"
+
+#: career.php:29
+msgid "Career archive"
+msgstr "Archives des carrières"
+
+#: career.php:30
+msgid "Career attributes"
+msgstr "Attributs des carrières"
+
+#: career.php:31
+msgid "Insert into career"
+msgstr "Intégrer dans la carrière"
+
+#: career.php:32
+msgid "Uploaded to this career"
+msgstr "Publié dans cette rubrique « Carrière »"
+
+#: career.php:33
+msgid "Filter careers list"
+msgstr "Filtrer la liste des carrières"
+
+#: career.php:34
+msgid "Career list navigation"
+msgstr "Navigation dans la liste des carrières"
+
+#: career.php:35
+msgid "Career list"
+msgstr "Liste des carrières"
+
+#: career.php:36
+msgid "Career published."
+msgstr "Carrière publiée."
+
+#: career.php:37
+msgid "Career published privately."
+msgstr "Carrière, publié à compte d'auteur."
+
+#: career.php:38
+msgid "Career reverted to draft."
+msgstr "La carrière a été remise à zéro."
+
+#: career.php:39
+msgid "Career scheduled."
+msgstr "Carrière programmée."
+
+#: career.php:40
+msgid "Career updated."
+msgstr "Carrière mise à jour."
+
+#: career.php:47
+msgctxt "URL"
+msgid "careers"
+msgstr "carrieres"
+
+#: career.php:55
+msgid "Portraits"
+msgstr "Portraits"
+
+#: career.php:56
+msgid "Portrait"
+msgstr "Portrait"
+
+#: career.php:57
+msgid "Search Portrait"
+msgstr "Rechercher un portrait"
+
+#: career.php:58
+msgid "Popular Portrait"
+msgstr "Portrait populaire"
+
+#: career.php:59
+msgid "All Portrait"
+msgstr "Tous les portraits"
+
+#: career.php:60
+msgid "Edit Portrait"
+msgstr "Modifier le portrait"
+
+#: career.php:61
+msgid "View Portrait"
+msgstr "Voir le portrait"
+
+#: career.php:62
+msgid "Update Portrait"
+msgstr "Mettre à jour le portrait"
+
+#: career.php:63
+msgid "Add New Portrait"
+msgstr "Ajouter un nouveau portrait"
+
+#: career.php:64
+msgid "New Portrait Name"
+msgstr "Nom du nouveau portrait"
+
+#: career.php:65
+msgid "Separate Portrait with commas"
+msgstr "Séparer les noms propres par des virgules"
+
+#: career.php:66
+msgid "Add or remove Portrait"
+msgstr "Ajouter ou supprimer le mode Portrait"
+
+#: career.php:67
+msgid "Choose from the most used Portrait"
+msgstr "Faites votre choix parmi les formats portrait les plus courants"
+
+#: career.php:68
+msgid "No Portrait found."
+msgstr "Aucun portrait trouvé."
+
+#: career.php:69
+msgid "No Portrait"
+msgstr "Pas de portrait"
+
+#: career.php:70
+msgid "Portrait list navigation"
+msgstr "Navigation dans la liste des portraits"
+
+#: career.php:71
+msgid "Portrait list"
+msgstr "Liste des portraits"
+
+#: career.php:72
+msgid "&larr; Back to Portrait"
+msgstr "&larr; Retour au mode portrait"

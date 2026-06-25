@@ -16,8 +16,8 @@
             ?>
 
             <div class="text-primary uppercase text-center mt-7">
-                <h1 class="text-3xl font-semibold mb-4"><?php the_title(); ?></h1>
-                <span class="text-xl font-extralight">
+                <h1 class="text-xl md:text-3xl lg:text-2xl font-semibold mb-4"><?php the_title(); ?></h1>
+                <span class="text-md md:text-lg lg:text-xl font-extralight">
                     <?= $location ? $location[0]->name : '' ?>
                     <?php if ($status) : ?>
                         – <?php echo $status[0]->name; ?>

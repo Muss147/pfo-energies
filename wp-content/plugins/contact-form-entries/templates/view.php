@@ -549,20 +549,20 @@ else if($type == 'file'){
     }else{
         $files_arr=$value;
     } 
-    $value=''; 
-foreach($files_arr as $k=>$val){
+    $value=''; //$k=0;
+foreach($files_arr as $k=>$val){ 
 $value.=$file_value=vxcf_form::file_link($val);
     ?>
 <div class="vx_file_single">
 <?php echo esc_url($file_value); ?>  
   <div>
-  <input type="hidden" name="files_<?php echo esc_html($f_name.'['.$k.']') ?>" value="<?php echo esc_html($val) ?>" />
+  <input type="hidden" name="files_<?php echo esc_html($f_name.'['.str_replace(array("[" , "]"),'',$k).']') ?>" value="<?php echo esc_html($val) ?>" />
   <input type="file" id="vx_<?php echo esc_html($field['name']); ?>" <?php echo esc_html($req) ?> class="vx_input" name="<?php echo esc_html($f_name).'[]' ?>" autocomplete="off">
  <a href="#" class="vx_del_link vx_float_right vx_remove_file"><?php _e('Remove','contact-form-entries') ?></a>
   </div>
   </div>
    <?php
-    }
+  }
     ?>
    <div class="vx_file_single">
    <button type="button" class="button vx_add_file"><i class="fa fa-plus-circle"></i> <?php _e('Add File','contact-form-entries') ?></button>

@@ -71,3 +71,30 @@ add_action('acf/save_post', function ($post_id) {
     }
 
 }, 20);
+
+add_action('pre_get_posts', function ($query) {
+
+    if (
+        !is_admin()
+        && $query->is_main_query()
+        && $query->is_search()
+    ) {
+
+        $query->set('post_type', [
+            'post',
+            'page',
+            'realisations',
+            'carrers',
+            'metiers'
+        ]);
+
+    }
+
+});
+
+add_action('after_setup_theme', function () {
+    load_theme_textdomain(
+        'pfoenergies',
+        get_template_directory() . '/languages'
+    );
+});

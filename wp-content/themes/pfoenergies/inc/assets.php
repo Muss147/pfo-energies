@@ -28,4 +28,11 @@ add_action('wp_enqueue_scripts', function () {
         null,
         true
     );
+    wp_enqueue_script(
+        'search-modal',
+        get_template_directory_uri() . '/assets/js/search.js',
+        [],
+        null,
+        true
+    );
 }); 

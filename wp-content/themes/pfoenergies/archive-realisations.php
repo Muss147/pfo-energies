@@ -2,18 +2,21 @@
 <?php get_header(); ?>
 
     <?php 
-    $archive_page = get_page_by_path('realisations');
-    $archive_page_id = $archive_page ? $archive_page->ID : null;
-
-    $banner_url = ($archive_page_id && has_post_thumbnail($archive_page_id)) 
-        ? get_the_post_thumbnail_url($archive_page_id, 'full') 
+    $page = get_page_by_path(
+        pll_current_language() === 'en'
+            ? 'achievements'
+            : 'realisations'
+    );
+    $title = $page ? get_the_title($page->ID) : '';
+    $banner_url = ($page && has_post_thumbnail($page->ID))
+        ? get_the_post_thumbnail_url($page->ID, 'full')
         : 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO8dOlyPQAH7QL4Bgm9FAAAAABJRU5ErkJggg=='; // Ton image par défaut
     ?>
     
-    <div class="w-full h-168.75 bg-cover bg-center bg-no-repeat bg-fixed" style="background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('<?= esc_url($banner_url); ?>');">        
+    <div class="w-full h-168.75 bg-cover bg-center bg-no-repeat lg:bg-fixed" style="background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('<?= esc_url($banner_url); ?>');">        
         <div class="max-w-350 mx-auto px-4 md:px-6 h-full py-14 mt-5 md:mt-19">
             <h1 class="text-4xl uppercase text-white font-semibold">
-                <?php post_type_archive_title() ?>
+                <?= esc_html($title); ?>
             </h1>
         </div>
     </div>

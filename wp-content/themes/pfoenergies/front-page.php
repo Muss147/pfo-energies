@@ -5,7 +5,7 @@
         ? get_the_post_thumbnail_url(get_the_ID(), 'home-thumbnail') 
         : 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO8dOlyPQAH7QL4Bgm9FAAAAABJRU5ErkJggg==';
     ?>
-    <div class="w-full h-168.75 bg-cover bg-center bg-no-repeat bg-fixed" style="background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('<?= esc_url($banner_url); ?>');">
+    <div class="w-full h-168.75 bg-cover bg-center bg-no-repeat lg:bg-fixed" style="background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('<?= esc_url($banner_url); ?>');">
         <div class="max-w-350 mx-auto px-4 md:px-6 h-full flex flex-col justify-end py-14">
             <div class="max-w-full lg:max-w-2/5 w-full text-white">
                 <h1 class="text-2xl md:text-4xl uppercase font-semibold">
@@ -19,14 +19,21 @@
                     <?php the_content(); ?>
                 </div>
 
-                <?php if (have_rows('call_to_action')): while(have_rows('call_to_action')): the_row() ?>
-                <a href="<?php the_sub_field('link') ?>" class="bg-white text-primary hover:bg-transparent hover:text-white border-white border-2 text-md px-3 py-2 rounded-sm transition-colors duration-300 ease-in-out">
-                    <span class="inline-block ml-2"><?php the_sub_field('libelle') ?></span>
+                <?php 
+                    if ($bouton_link = get_field('call_to_action')) : 
+                        $link_url    = $bouton_link['url'];
+                        $link_title  = $bouton_link['title'] ?: __('Read more', 'pfoenergies');
+                        $link_target = $bouton_link['target'] ? ' target="' . esc_attr($bouton_link['target']) . '"' : '';
+                ?>
+                <a href="<?= esc_url($link_url); ?>" 
+                    class="bg-white text-primary hover:bg-transparent hover:text-white border-white border-2 text-md px-3 py-2 rounded-sm transition-colors duration-300 ease-in-out"
+                    <?= $link_target; ?>>
+                    <span class="inline-block ml-2"><?= esc_html($link_title); ?></span>
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 inline-block ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                     </svg>
                 </a>
-                <?php endwhile; endif ?>
+                <?php endif ?>
             </div>
         </div>
     </div>
@@ -220,14 +227,21 @@
             <div class="absolute bottom-0 right-0 flex-none size-10 border-r border-b border-primary"></div>
         </div>
 
-        <?php if (have_rows('call_to_action')): while(have_rows('call_to_action')): the_row() ?>
-        <a href="<?php the_sub_field('lien') ?>" class="bg-primary text-white hover:bg-white hover:text-primary hover:border-primary border-2 text-md px-3 py-2 rounded-sm transition-colors duration-300 ease-in-out">
-            <span class="inline-block ml-2"><?php the_sub_field('libelle') ?></span>
+        <?php 
+            if ($bouton_link = get_sub_field('call_to_action')) : 
+                $link_url    = $bouton_link['url'];
+                $link_title  = $bouton_link['title'] ?: __('Read more', 'pfoenergies');
+                $link_target = $bouton_link['target'] ? ' target="' . esc_attr($bouton_link['target']) . '"' : '';
+        ?>
+        <a href="<?= esc_url($link_url); ?>" 
+            class="bg-primary text-white hover:bg-white hover:text-primary hover:border-primary border-2 text-md px-3 py-2 rounded-sm transition-colors duration-300 ease-in-out"
+            <?= $link_target; ?>>
+            <span class="inline-block ml-2"><?= esc_html($link_title); ?></span>
             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 inline-block ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
             </svg>
         </a>
-        <?php endwhile; endif ?>
+        <?php endif ?>
     </div>
     <?php endwhile; endif ?>
 

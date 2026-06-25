@@ -95,28 +95,6 @@ add_action('init', function () {
         'back_to_items'              => __('&larr; Back to Locations' , 'realisation'),
         ]
     ]);
-    // register_taxonomy('project_option', 'realisations', [
-    //     'labels' => [
-    //     'name'                       => __('Options', 'realisation' ),
-    //     'singular_name'              => __('Option', 'realisation' ),
-    //     'search_items'               => __('Search Options' , 'realisation'),
-    //     'popular_items'              => __('Popular Options' , 'realisation'),
-    //     'all_items'                  => __('All Options' , 'realisation'),
-    //     'edit_item'                  => __('Edit Option' , 'realisation'),
-    //     'view_item'                  => __('View Option' , 'realisation'),
-    //     'update_item'                => __('Update Option' , 'realisation'),
-    //     'add_new_item'               => __('Add New Option' ), 'realisation', 
-    //     'new_item_name'              => __('New Option Name' , 'realisation'),
-    //     'separate_items_with_commas' => __('Separate Options with commas' , 'realisation'),
-    //     'add_or_remove_items'        => __('Add or remove Options' , 'realisation'),
-    //     'choose_from_most_used'      => __('Choose from the most used Options' , 'realisation'),
-    //     'not_found'                  => __('No Options found.' , 'realisation'),
-    //     'no_terms'                   => __('No Options' , 'realisation'),
-    //     'items_list_navigation'      => __('Options list navigation' , 'realisation'),
-    //     'items_list'                 => __('Options list' , 'realisation'),
-    //     'back_to_items'              => __('&larr; Back to Options' , 'realisation'),
-    //     ]
-    // ]);
 });
 
 register_activation_hook(__FILE__, 'flush_rewrite_rules');
